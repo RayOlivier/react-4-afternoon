@@ -15,7 +15,7 @@ export default class ClassList extends Component {
         `http://localhost:3005/students?class=${this.props.match.params.class}`
       )
       .then((response) => {
-        console.log(response)
+        // console.log(response)
         this.setState({ students: response.data })
       })
   }
@@ -34,6 +34,9 @@ export default class ClassList extends Component {
 
     return (
       <div className="box">
+        <Link to={`/`}>
+          <button>Back</button>
+        </Link>
         <h1>{this.props.match.params.class}</h1>
         <h2>ClassList:</h2>
         {newList}
